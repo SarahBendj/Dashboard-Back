@@ -48,6 +48,45 @@ class Warning extends Core {
       const response = await dbClient.query(sqlQuery)
       return response.rows;
    }
+   static async detectWarn() {
+    const sqlQuery =   `SELECT 
+    warning.id,
+    warning.description,
+    warning.createdat::timestamp with time zone,
+    fridge.id as fridgeId,
+    fridge_controle_id,
+    null AS reception_controle_id
+FROM 
+    warning
+JOIN 
+    fridge_controle ON warning.fridge_controle_id = fridge_controle.id
+JOIN 
+    fridge ON fridge.id = fridge_controle.fridge_id
+WHERE 
+    warning.warning_status = true
+
+UNION
+
+SELECT 
+    warning.id,
+    warning.description,
+    warning.createdat::timestamp with time zone,
+    null AS fridgeId,
+    null AS fridge_controle_id,
+    reception_controle_id
+FROM 
+    warning
+JOIN 
+    reception_controle ON warning.reception_controle_id = reception_controle.id
+WHERE 
+    warning.warning_status = true;
+
+`
+
+const response = await dbClient.query(sqlQuery)
+return response.rows;
+   }
+ 
     
 }
 module.exports = Warning

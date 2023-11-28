@@ -37,6 +37,15 @@ const warnigController = {
       next(new ApiError("operation dropped", 500));
     }
   },
+  async notifyAWarning(_, response) {
+    const warnings = await Warning.detectWarn();
+    if (warnings) {
+      response.json(warnings);
+    } else {
+      next(new ApiError("operation dropped", 500));
+    }
+  },
+
   async stats(_, response) {
     const warnings = await Warning.fixedSection();
     if (warnings) {

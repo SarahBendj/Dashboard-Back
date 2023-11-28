@@ -12,6 +12,7 @@ const authentificate = require('../services/middleware/AuthentifByToken')
 router.get('/warnings',authentificate, warningController.showAll)
 router.get('/warnings/infos',authentificate, warningController.showAllWarnings)
 router.get('/warnings/infos/true',authentificate, warningController.filterOntrueWarning)
+router.get('/warnings/notifyalarms',authentificate, warningController.notifyAWarning)
 router.get('/warnings/stats',authentificate, warningController.stats)
 router.patch('/warnings/:id',(validate.method('body',schema.Warning)),authentificate, warningController.fixWarning)
 
