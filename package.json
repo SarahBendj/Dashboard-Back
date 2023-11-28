@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "name": "projet-05-cuist-o-back",
+  "version": "1.0.0",
+  "description": "Plan Back",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Ohm/projet-05-cuist-o-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Ohm/projet-05-cuist-o-back/issues"
+  },
+  "homepage": "https://github.com/O-clock-Ohm/projet-05-cuist-o-back#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "chai": "^4.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "joi": "^17.9.1",
+    "jsonwebtoken": "^9.0.0",
+    "jwt-decode": "^3.1.2",
+    "mocha": "^10.2.0",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^3.0.1",
+    "pg": "^8.10.0",
+    "supertest": "^6.3.3"
+  }
+}

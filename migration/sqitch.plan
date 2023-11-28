@@ -1,0 +1,7 @@
+%syntax-version=1.0.0
+%project=cuisto
+
+1.create_tables 2023-11-17T12:16:05Z Etudiant O'clock <student@teleporter> # creation of tables
+2.setting_dates 2023-11-17T12:16:06Z Etudiant O'clock <student@teleporter> # adding timestamp columns into supplier & app_user tables
+3.identificant_column 2023-11-17T12:16:07Z Etudiant O'clock <student@teleporter> # adding new column that's represent the identificant
+4.seeding 2023-11-17T12:16:07Z Etudiant O'clock <student@teleporter> # seeding data into tables
