@@ -48,7 +48,7 @@ const appUserController = {
         role,
       });
 
-      sendWelcomeEmail(newUser);
+      // sendWelcomeEmail(newUser);
 
       delete newUser.password
 
@@ -64,6 +64,15 @@ const appUserController = {
     const user = await AppUser.findOne(id);
     if (user) {
       response.json(user);
+    } else {
+      next(new ApiError("no data", 500));
+    }
+  },
+
+  async displayLastUsersStats(_, response) {
+    const users = await AppUser.showLastActivities();
+    if (users) {
+      response.json(users);
     } else {
       next(new ApiError("no data", 500));
     }

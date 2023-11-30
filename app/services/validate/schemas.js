@@ -43,7 +43,7 @@ const AddUser = Joi.object({
   role: Joi.string().max(10).required().messages({
     "string.base": " please enter a valid email",
     "string.max": " role should not have more characters that 10",
-    "string.required": "please enter an email"
+    "string.required": "please enter ethe according role"
   }),
   
 });
