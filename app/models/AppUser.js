@@ -55,6 +55,7 @@ GROUP BY app_user.identificant, controle_date
 HAVING COALESCE(DATE(fridge_controle.createdat), DATE(reception_controle.createdat)) IS NOT NULL
 ORDER BY max_controle ASC;
 
+
 `
 const result = await dbClient.query(sqlQuery);
 

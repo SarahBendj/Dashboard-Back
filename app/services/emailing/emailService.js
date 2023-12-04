@@ -3,10 +3,11 @@ require("dotenv").config();
 
 async function sendWelcomeEmail(user) {
   const transporter = nodemailer.createTransport({
-    service: "hotmail",
+    service: "gmail",
+    host:"smtp.gmail.com",
     auth: {
       user: process.env.NM_EMAIL,
-      pass: process.env.NM_PASSWORD,
+      pass: process.env.NM_APP_PASSWORD,
     },
   });
 
@@ -106,10 +107,11 @@ async function sendWelcomeEmail(user) {
 
 async function sendForgottenPasswordEmail(user) {
   const transporter = nodemailer.createTransport({
-    service: "hotmail",
+    service: "gmail",
+    host:"smtp.gmail.com",
     auth: {
       user: process.env.NM_EMAIL,
-      pass: process.env.NM_PASSWORD,
+      pass: process.env.NM_APP_PASSWORD,
     },
   });
 
@@ -159,7 +161,7 @@ async function sendForgottenPasswordEmail(user) {
           <p>We strongly recommend that you change your password the first time you log in!</p>
           <p>If you have any questions or concerns, please do not hesitate to contact your manager.</p>
 
-          <a href="http://83.194.221.212/login" style="background-color:#007bff;border-radius:4px;color:#fff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;">Login</a>
+          <a href="http://localhost:3000/auth/login" style="background-color:#007bff;border-radius:4px;color:#fff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;">Login</a>
         </div>
       </body>
     </html>

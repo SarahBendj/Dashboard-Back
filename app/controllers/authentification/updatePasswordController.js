@@ -8,9 +8,11 @@ const updatePasswordController = {
 
     const { oldPassword, newPassword } = request.body;
     const user = await AppUser.findOne(id);
+    
   
     if(user)
     try {
+     
       const match = await bcrypt.compare(oldPassword, user.password);
 
       if (!match) {

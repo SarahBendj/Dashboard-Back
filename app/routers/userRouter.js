@@ -13,13 +13,13 @@ const schema = require("../services/validate/schemas");
 const isAdmin= require("../services/middleware/isAdmin");
 
 //*USERS
-router.get('/users/info',authentificate ,isAdmin,/*superadmin*/appUserController.showAllInfo);
+router.get('/users/info',authentificate ,/*superadmin*/appUserController.showAllInfo);
 router.get('/users',authentificate,isAdmin,appUserController.showAll);
 router.get('/users/stats',authentificate,appUserController.displayLastUsersStats);
 router.post('/users',authentificate,isAdmin,validate.method('body',schema.AddUser), appUserController.createOne);
 
 router.post('/login',validate.method('body',schema.Login), loginController.checkMemberData);
-
+1
 router.post('/login/reset', forgottenPassword.resetPassword);
 
 router.patch('/users/:id', authentificate,validate.method('body',schema.changePassword),updatePasswordController.changingPassword);

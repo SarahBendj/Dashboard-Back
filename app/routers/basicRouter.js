@@ -23,7 +23,7 @@ router.post("/fridges", fridgeController.createOne);
 router.put("/fridges/:id", isAdmin, fridgeController.updateOne);
 router.delete("/fridges/:id", isAdmin, fridgeController.deleteOne);
 //*SUPPLIERS
-router.get("/suppliers",  supplierController.showAll);
+router.get("/suppliers", supplierController.showAll);
 router.post("/suppliers",isAdmin, supplierController.createOne);
 router.patch("/suppliers/:id",isAdmin, supplierController.updateOne);
 router.delete("/suppliers/:id",isAdmin, supplierController.deleteOne );

@@ -48,7 +48,7 @@ const appUserController = {
         role,
       });
 
-      // sendWelcomeEmail(newUser);
+      sendWelcomeEmail(newUser);
 
       delete newUser.password
 
